@@ -62,66 +62,7 @@ const HomeTestimonial: FC = () => {
     nextArrow: <SliderArrow type="next" />,
   }
 
-  return (
-    <Box id="testimonial" sx={{ pb: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}>
-      <Container>
-        <Grid container spacing={5}>
-          <Grid item xs={12} md={6}>
-            <Typography
-              component="h2"
-              sx={{
-                position: 'relative',
-                fontSize: { xs: 36, md: 46 },
-                mt: { xs: 0, md: 7 },
-                mb: 4,
-                lineHeight: 1,
-                fontWeight: 'bold',
-              }}
-            >
-              Testimonial What our{' '}
-              <Typography
-                component="mark"
-                sx={{
-                  position: 'relative',
-                  color: 'primary.main',
-                  fontSize: 'inherit',
-                  fontWeight: 'inherit',
-                  backgroundColor: 'unset',
-                }}
-              >
-                Students{' '}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: { xs: 20, md: 28 },
-                    left: 2,
-                    '& img': { width: { xs: 130, md: 175 }, height: 'auto' },
-                  }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/headline-curve.svg" alt="Headline curve" />
-                </Box>
-              </Typography>
-              Say
-            </Typography>
-
-            <StyledSlickContainer>
-              <Slider ref={sliderRef} {...sliderConfig}>
-                {data.map((item, index) => (
-                  <TestimonialItem key={String(index)} item={item} />
-                ))}
-              </Slider>
-            </StyledSlickContainer>
-          </Grid>
-          <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
-            <Box sx={{ width: { xs: '100%', md: '90%' } }}>
-              <Image src="/images/home-testimonial.png" width={520} height={540} quality={97} alt="Testimonial img" />
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  )
+  return <Box id="testimonial" sx={{ pb: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}></Box>
 }
 
 export default HomeTestimonial

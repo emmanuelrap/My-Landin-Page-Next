@@ -12,9 +12,9 @@ const Logo: FC<Props> = ({ onClick, variant }) => {
       <Typography
         variant="h4"
         component="h1"
-        sx={{ fontWeight: 700, '& span': { color: variant === 'primary' ? 'primary.main' : 'unset' } }}
+        sx={{ fontWeight: 600, '& span': { color: variant === 'primary' ? 'primary.main' : 'unset' } }}
       >
-        Course<span>space</span>
+        <span>Zambrano</span>.Ing
       </Typography>
     </Box>
   )

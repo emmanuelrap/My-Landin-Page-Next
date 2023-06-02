@@ -93,7 +93,7 @@ const HomeOurMentors: FC = () => {
     >
       <Container maxWidth="lg">
         <Typography variant="h1" sx={{ fontSize: 40 }}>
-          Our Expert Mentors
+          My Projects...
         </Typography>
 
         <Slider {...sliderConfig}>

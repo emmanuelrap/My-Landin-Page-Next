@@ -13,20 +13,21 @@ const Footer: FC = () => {
     >
       <Container>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={5}>
-            <Box sx={{ width: { xs: '100%', md: 360 }, mb: { xs: 3, md: 0 } }}>
+          <Grid item xs={10} md={5}>
+            <Box sx={{ width: { xs: '100%', md: 600 }, mb: { xs: 3, md: 0 } }}>
               <Typography component="h2" variant="h2" sx={{ mb: 2 }}>
-                Coursespace
+                Thanks for Watch !!
               </Typography>
               <Typography variant="subtitle1" sx={{ letterSpacing: 1, mb: 2 }}>
-                Coursespace is an online learning platform that has been operating since 2018 until now.
+                I hope you have enjoyed your stay. Any questions or comments let me know by my email:{' '}
+                <b>emmanuelzzz123@gmail.com</b>
               </Typography>
               <FooterSocialLinks />
             </Box>
           </Grid>
-          <Grid item xs={12} md={7}>
+          {/* <Grid item xs={12} md={7}>
             <FooterNavigation />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Box>
