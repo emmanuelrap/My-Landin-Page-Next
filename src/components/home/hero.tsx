@@ -151,11 +151,11 @@ const HomeHero: FC = () => {
                     See Projects
                   </StyledButton>
                 </ScrollLink>
-                <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
+                {/* <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
                   <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
                     Watch Video
                   </StyledButton>
-                </ScrollLink>
+                </ScrollLink> */}
               </Box>
             </Box>
           </Grid>
