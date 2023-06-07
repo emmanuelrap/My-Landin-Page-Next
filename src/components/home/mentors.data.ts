@@ -34,7 +34,7 @@ export const data: Array<Mentor> = [
   {
     id: 3,
     link: 'https://chatzam.netlify.app/',
-    photo: '/images/webs/chatzam.PNG',
+    photo: '/images/webs/chatzam.png',
     name: 'Chat Zam',
     category: 'HTML CSS PWA',
     description:
