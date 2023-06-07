@@ -4,6 +4,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 import { Mentor } from '@/interfaces/mentor'
+import { Stack } from '@mui/material'
 
 interface Props {
   item: Mentor
@@ -49,8 +50,23 @@ const MentorCardItem: FC<Props> = ({ item }) => {
           </Typography>
           <a href={item.link}>{item.link}</a>
           <Box sx={{ '& img': { height: 26 }, mt: 2 }}>
-            {/* eslint-disable-next-line */}
-            <img src={item.company?.logo} alt={item.company?.name + ' logo'} />
+            <Stack direction="row">
+              {item.company?.logo1 && (
+                <img src={item.company?.logo1} alt={item.company?.name + ' logo1'} height={'32px'} />
+              )}{' '}
+              {item.company?.logo2 && (
+                <img src={item.company?.logo2} alt={item.company?.name + ' logo2'} height={'32px'} />
+              )}{' '}
+              {item.company?.logo3 && (
+                <img src={item.company?.logo3} alt={item.company?.name + ' logo3'} height={'32px'} />
+              )}{' '}
+              {item.company?.logo4 && (
+                <img src={item.company?.logo4} alt={item.company?.name + ' logo4'} height={'32px'} />
+              )}{' '}
+              {item.company?.logo5 && (
+                <img src={item.company?.logo5} alt={item.company?.name + ' logo5'} height={'32px'} />
+              )}
+            </Stack>
           </Box>
         </Box>
       </Box>

@@ -5,7 +5,11 @@ export interface Mentor extends Omit<User, 'professional'> {
   link: string
   category: string
   company?: {
-    name: string
-    logo: string
+    name?: string
+    logo1?: string
+    logo2?: string
+    logo3?: string
+    logo4?: string
+    logo5?: string
   }
 }

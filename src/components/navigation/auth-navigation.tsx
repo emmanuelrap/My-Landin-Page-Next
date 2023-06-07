@@ -9,6 +9,7 @@ const AuthNavigation: FC = () => {
         Sign In
       </StyledButton>
       <StyledButton disableHoverEffect={true}>Sign Up</StyledButton> */}
+      n
     </Box>
   )
 }
