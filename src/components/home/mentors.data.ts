@@ -43,7 +43,7 @@ export const data: Array<Mentor> = [
       name: 'PWA',
       logo1: '/images/icons/icon-html.png',
       logo2: '/images/icons/icon-css.png',
-      logo3: '/images/icons/icon-pwa.png',
+      logo3: '/images/icons/icon-pwa.PNG',
     },
   },
   // {
