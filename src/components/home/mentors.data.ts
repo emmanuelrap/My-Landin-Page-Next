@@ -4,7 +4,7 @@ export const data: Array<Mentor> = [
   {
     id: 1,
     link: 'https://peliculas-zam.netlify.app/',
-    photo: '/images/webs/webstore.png',
+    photo: '/images/webs/webstore.PNG',
     name: 'Movies Store',
     category: 'HTML CSS Animation ReactJS',
     description: 'Basic web page where I consume a movie api and display its information',
@@ -19,7 +19,7 @@ export const data: Array<Mentor> = [
   {
     id: 2,
     link: 'https://pokedex-zam.netlify.app/',
-    photo: '/images/webs/pokedex.png',
+    photo: '/images/webs/pokedex.PNG',
     name: 'Pokedex',
     category: 'HTML CSS ReactJS',
     description: 'web page that consumes an api and renders the data in an attractive way',
@@ -34,7 +34,7 @@ export const data: Array<Mentor> = [
   {
     id: 3,
     link: 'https://chatzam.netlify.app/',
-    photo: '/images/webs/chatzam.png',
+    photo: '/images/webs/chatzam.PNG',
     name: 'Chat Zam',
     category: 'HTML CSS PWA',
     description:
