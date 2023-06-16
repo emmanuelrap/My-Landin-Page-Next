@@ -136,20 +136,16 @@ const HomeHero: FC = () => {
                 </Typography>
               </Box>
               <Box sx={{ mb: 4, width: { xs: '100%', md: '70%' } }}>
-                <Typography sx={{ color: 'text.secondary', lineHeight: 1.5 }}>
-                  <b>
-                    {' '}
-                    {
-                      'My name is Carlos Emmanuel Zambrano Cortez, I am System Enginner and Web developer, I love the technology and solving problems.'
-                    }
-                  </b>
+                <Typography sx={{ color: 'text.secondary', lineHeight: 1.5, fontSize: '1.3rem' }}>
+                  My name is Carlos Emmanuel Zambrano Cortez, I am System Enginner and Web developer, I love the
+                  technology and solving problems.
                 </Typography>
               </Box>
               <Box sx={{ '& button': { mr: 2 } }}>
                 <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="contained">
+                  {/* <StyledButton color="primary" size="large" variant="contained">
                     See Projects
-                  </StyledButton>
+                  </StyledButton> */}
                 </ScrollLink>
                 {/* <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
                   <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>

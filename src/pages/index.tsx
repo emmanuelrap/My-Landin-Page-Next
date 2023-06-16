@@ -7,12 +7,14 @@ import { MainLayout } from '@/components/layout'
 const DynamicHomeHero = dynamic(() => import('../components/home/hero'))
 
 const DynamicHomeOurMentors = dynamic(() => import('../components/home/mentors'))
+const InputIA = dynamic(() => import('../components/home/InputBar'))
 const DynamicHomeNewsLetter = dynamic(() => import('../components/home/newsletter'))
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
       <DynamicHomeHero />
+      <InputIA />
       <DynamicHomeOurMentors />
       {/* <DynamicHomeNewsLetter /> */}
     </>

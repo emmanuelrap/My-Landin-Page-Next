@@ -3,6 +3,22 @@ import type { Mentor } from '@/interfaces/mentor'
 export const data: Array<Mentor> = [
   {
     id: 1,
+    link: 'https://famous-chat-zam.netlify.app/',
+    photo: '/images/webs/chatfamous.PNG',
+    name: 'Famous Chat',
+    category: 'openIA MUI React JS ',
+    description:
+      'It is a web application that connects to an OpenAI API and simulates chatting with the selected celebrity.',
+    company: {
+      name: 'React',
+      logo1: '/images/icons/icon-chatgpt.png',
+      logo2: '/images/icons/icon-mui.png',
+      logo3: '/images/icons/reactlogo.png',
+      logo4: '/images/icons/icon-js.png',
+    },
+  },
+  {
+    id: 2,
     link: 'https://peliculas-zam.netlify.app/',
     photo: '/images/webs/webstore.PNG',
     name: 'Movies Store',
@@ -17,7 +33,7 @@ export const data: Array<Mentor> = [
     },
   },
   {
-    id: 2,
+    id: 3,
     link: 'https://pokedex-zam.netlify.app/',
     photo: '/images/webs/pokedex.PNG',
     name: 'Pokedex',
@@ -32,7 +48,7 @@ export const data: Array<Mentor> = [
     },
   },
   {
-    id: 3,
+    id: 4,
     link: 'https://chatzam.netlify.app/',
     photo: '/images/webs/chatzam.PNG',
     name: 'Chat Zam',
@@ -46,16 +62,4 @@ export const data: Array<Mentor> = [
       logo3: '/images/icons/icon-pwa.PNG',
     },
   },
-  // {
-  //   id: 4,
-  //   photo: '/images/mentors/philip-martin-5aGUyCW_PJw-unsplash.jpg',
-  //   name: 'Rizki Known',
-  //   category: 'Fullstack Development',
-  //   description:
-  //     'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  //   company: {
-  //     name: 'Microsoft',
-  //     logo: '/images/companies/microsoft.png',
-  //   },
-  // },
 ]
