@@ -18,15 +18,15 @@ interface ExpItemProps {
 
 const exps: Array<Exp> = [
   {
-    label: 'Java, JS, Kotlin,Python, PHP,  Vue3',
+    label: 'Java, JS,TypeScript, Kotlin, Python',
     value: 'Programmer',
   },
   {
-    label: 'ReactJS, HTML5,Tailwind, SASS, Bootstrap, MUI, PWA-SPA',
+    label: 'ReactJS, HTML5,Tailwind, SASS, Bootstrap, MUI, PWA-SPA,Node,Web Services',
     value: 'Web Developer',
   },
   {
-    label: 'Creativity, Critical Thinking, Logic',
+    label: 'Creativity, Critical Thinking, Logic, love to learn',
     value: 'Enginner',
   },
 ]
@@ -49,7 +49,7 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 
 const HomeHero: FC = () => {
   return (
-    <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
+    <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 1, pb: { xs: 8, md: 10 } }}>
       <Container maxWidth="lg">
         <Grid container spacing={0} sx={{ flexDirection: { xs: 'column', md: 'unset' } }}>
           <Grid item xs={12} md={7}>
@@ -62,15 +62,15 @@ const HomeHero: FC = () => {
                 justifyContent: 'center',
               }}
             >
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: 2 }}>
                 <Typography
                   component="h2"
                   sx={{
                     position: 'relative',
-                    fontSize: { xs: 40, md: 72 },
+                    fontSize: { xs: 35, md: 60 },
                     letterSpacing: 1.5,
                     fontWeight: 'bold',
-                    lineHeight: 1.3,
+                    lineHeight: 1.2,
                   }}
                 >
                   <Typography
@@ -84,18 +84,6 @@ const HomeHero: FC = () => {
                     }}
                   >
                     Welcome{' '}
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        top: { xs: 24, md: 34 },
-                        left: 2,
-                        transform: 'rotate(3deg)',
-                        '& img': { width: { xs: 146, md: 210 }, height: 'auto' },
-                      }}
-                    >
-                      {/* eslint-disable-next-line */}
-                      <img src="/images/headline-curve.svg" alt="Headline curve" />
-                    </Box>
                   </Typography>
                   to {/* your{' '} */}
                   <Typography
@@ -107,7 +95,7 @@ const HomeHero: FC = () => {
                       '& svg': {
                         position: 'absolute',
                         top: -16,
-                        right: -21,
+                        right: -50,
                         width: { xs: 22, md: 30 },
                         height: 'auto',
                       },
@@ -157,12 +145,12 @@ const HomeHero: FC = () => {
           </Grid>
           <Grid item xs={12} md={4} sx={{ position: 'relative' }}>
             <Box sx={{ lineHeight: 0 }}>
-              {<Image src="/images/avatars/merounded.png" width={400} height={500} alt="Hero img" />}
+              {<Image src="/images/avatars/merounded.png" width={250} height={320} alt="Hero img" />}
             </Box>
           </Grid>
         </Grid>
         {/* Experience */}
-        <Box sx={{ boxShadow: 2, py: 4, px: 7, borderRadius: 4 }}>
+        <Box sx={{ boxShadow: 2, py: 2, px: 3, borderRadius: 4 }}>
           <Grid container spacing={2}>
             {exps.map((item) => (
               <Grid key={item.value} item xs={12} md={4}>
