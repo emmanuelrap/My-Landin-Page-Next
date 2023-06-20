@@ -3,13 +3,8 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import { FooterNavigation, FooterSocialLinks } from '@/components/footer'
+import { FooterSocialLinks } from '@/components/footer'
 
-import IconButton from '@mui/material/IconButton'
-
-import EmailIcon from '@mui/icons-material/Email'
-import TwitterIcon from '@mui/icons-material/Twitter'
-import InstagramIcon from '@mui/icons-material/Instagram'
 import { motion } from 'framer-motion'
 
 const Footer: FC = () => {

@@ -18,10 +18,8 @@ module.exports = {
     },
   },
   rules: {
-    // Aquí puedes agregar o personalizar las reglas de ESLint según tus necesidades
-    // Por ejemplo, para deshabilitar una regla en particular, puedes usar "off"
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
   },
-}
+};
