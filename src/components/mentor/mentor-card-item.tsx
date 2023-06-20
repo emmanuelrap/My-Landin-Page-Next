@@ -9,6 +9,9 @@ import { Stack } from '@mui/material'
 interface Props {
   item: Mentor
 }
+const imageStyle = {
+  marginRight: '5px',
+}
 
 const MentorCardItem: FC<Props> = ({ item }) => {
   return (
@@ -58,19 +61,19 @@ const MentorCardItem: FC<Props> = ({ item }) => {
           <Box sx={{ '& img': { height: 26 }, mt: 2 }}>
             <Stack direction="row">
               {item.company?.logo1 && (
-                <img src={item.company?.logo1} alt={item.company?.name + ' logo1'} height={'32px'} />
+                <img src={item.company?.logo1} alt={item.company?.name + ' logo1'} height={'35px'} style={imageStyle} />
               )}{' '}
               {item.company?.logo2 && (
-                <img src={item.company?.logo2} alt={item.company?.name + ' logo2'} height={'32px'} />
+                <img src={item.company?.logo2} alt={item.company?.name + ' logo2'} height={'35px'} style={imageStyle} />
               )}{' '}
               {item.company?.logo3 && (
-                <img src={item.company?.logo3} alt={item.company?.name + ' logo3'} height={'32px'} />
+                <img src={item.company?.logo3} alt={item.company?.name + ' logo3'} height={'35px'} style={imageStyle} />
               )}{' '}
               {item.company?.logo4 && (
-                <img src={item.company?.logo4} alt={item.company?.name + ' logo4'} height={'32px'} />
+                <img src={item.company?.logo4} alt={item.company?.name + ' logo4'} height={'35px'} style={imageStyle} />
               )}{' '}
               {item.company?.logo5 && (
-                <img src={item.company?.logo5} alt={item.company?.name + ' logo5'} height={'32px'} />
+                <img src={item.company?.logo5} alt={item.company?.name + ' logo5'} height={'35px'} style={imageStyle} />
               )}
             </Stack>
           </Box>

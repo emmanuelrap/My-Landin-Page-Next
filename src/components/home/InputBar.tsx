@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close'
+import SendIcon from '@mui/icons-material/Send'
+
 import { TextField, Button, Avatar, Box, Tooltip, CircularProgress, Stack, Typography, IconButton } from '@mui/material'
 const API_KEY = process.env.API_KEY
 const InputBar: React.FC = () => {
@@ -9,15 +11,17 @@ const InputBar: React.FC = () => {
   const [open, setOpen] = useState(true)
   const [sugerenciaActual, setSugerenciaActual] = useState('Write a question ...')
   const [mensajes, setMensajes] = useState([])
+
   //IA SETTIGNS
   const sugerencias = [
-    'Askme a personal question...',
+    'Askme a personal question about Carlos...',
     'What is Carlos Zambrano like? ',
     'How old is he? Where did he study? ',
     'Where does he live? ',
     'What does he do in his free time?',
     'How does he eat?',
     'How much experience does he have?',
+    'Its a good Developer?',
   ]
   const systemMessage = {
     role: 'system',
@@ -33,6 +37,12 @@ const InputBar: React.FC = () => {
         const randomNumber = Math.floor(Math.random() * sugerencias.length)
         setSugerenciaActual(sugerencias[randomNumber])
       }, 6000)
+    }
+  }
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      // Acciones a realizar cuando se presiona Enter
+      TurboOpenIA()
     }
   }
 
@@ -104,6 +114,7 @@ const InputBar: React.FC = () => {
   }
 
   const tooltipStyle = {
+    width: '300px',
     fontSize: '18px',
     position: 'relative',
     p: 1,
@@ -115,7 +126,11 @@ const InputBar: React.FC = () => {
   const handleOpenTooltip = () => {
     setOpen(true)
   }
-
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const handleClose = () => {
+    console.log('click jeje')
+    setInputValue('')
+  }
   return (
     <Stack>
       <Box
@@ -156,7 +171,7 @@ const InputBar: React.FC = () => {
               <Avatar
                 src="https://img.freepik.com/fotos-premium/traje-casual-chica-anime-kawaii-ia-generativa_755833-80.jpg?w=2000"
                 alt="Avatar del famoso"
-                sx={{ mr: 2, mb: 3, width: 64, height: 64 }}
+                sx={{ mr: 2, mb: 3, width: 70, height: 70 }}
               />
             </Tooltip>
           ) : (
@@ -170,45 +185,66 @@ const InputBar: React.FC = () => {
         </Box>
         <Box display="flex" alignItems="center" flexGrow={1} sx={{ mb: 3 }}>
           <TextField
+            value={inputValue}
+            onKeyDown={handleKeyPress}
             onChange={handleInputChange}
             fullWidth
             label={sugerenciaActual}
             variant="outlined"
-            color="primary"
-            sx={{ flexGrow: 1, mr: 2 }}
-            // Agrega cualquier otra propiedad personalizada según tus necesidades
+            InputProps={{
+              startAdornment: (
+                <IconButton onClick={handleClose}>
+                  <CloseIcon />
+                </IconButton>
+              ),
+              endAdornment: (
+                <IconButton
+                  disabled={inputValue === ''}
+                  onClick={TurboOpenIA}
+                  sx={{
+                    backgroundColor: '#4caf50',
+                    color: 'white',
+                    '&:hover': {
+                      backgroundColor: '#45a049',
+                    },
+                  }}
+                >
+                  <SendIcon />
+                </IconButton>
+              ),
+            }}
+            sx={{ m: 0 }}
           />
-          <Button variant="contained" color="primary" onClick={TurboOpenIA}>
-            Send
-          </Button>
         </Box>
       </Box>
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width="70%" // Ajusta el valor de width según tus necesidades
-        mx="auto"
-        sx={{
-          backgroundColor: '#f5f5f5',
-          borderRadius: 4,
-          padding: 4,
-          marginTop: 2,
-          mb: 4,
-        }}
-      >
-        <Typography
-          variant="body1"
-          color="textPrimary"
+      {respuesta != '' && (
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          width="70%" // Ajusta el valor de width según tus necesidades
+          mx="auto"
           sx={{
-            textAlign: 'justify',
-            fontWeight: 'bold',
-            fontSize: '1.2rem',
+            backgroundColor: '#f5f5f5',
+            borderRadius: 4,
+            padding: 4,
+            marginTop: 2,
+            mb: 4,
           }}
         >
-          {respuesta}
-        </Typography>
-      </Box>
+          <Typography
+            variant="body1"
+            color="textPrimary"
+            sx={{
+              textAlign: 'justify',
+              fontWeight: 'bold',
+              fontSize: '1.2rem',
+            }}
+          >
+            {respuesta}
+          </Typography>
+        </Box>
+      )}
     </Stack>
   )
 }

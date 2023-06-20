@@ -49,7 +49,16 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 
 const HomeHero: FC = () => {
   return (
-    <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 1, pb: { xs: 8, md: 10 } }}>
+    <Box
+      id="hero"
+      sx={{
+        backgroundColor: 'background.paper',
+        position: 'relative',
+        pt: 1,
+        pb: { xs: 8, md: 10 },
+        color: '#fff',
+      }}
+    >
       <Container maxWidth="lg">
         <Grid container spacing={0} sx={{ flexDirection: { xs: 'column', md: 'unset' } }}>
           <Grid item xs={12} md={7}>
@@ -123,7 +132,7 @@ const HomeHero: FC = () => {
                   Web Site
                 </Typography>
               </Box>
-              <Box sx={{ mb: 4, width: { xs: '100%', md: '70%' } }}>
+              <Box sx={{ mb: 4, width: { xs: '100%', md: '100%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.5, fontSize: '1.3rem' }}>
                   My name is Carlos Emmanuel Zambrano Cortez, I am System Enginner and Web developer, I love the
                   technology and solving problems.
@@ -132,22 +141,21 @@ const HomeHero: FC = () => {
               <Box sx={{ '& button': { mr: 2 } }}>
                 <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}>
                   {/* <StyledButton color="primary" size="large" variant="contained">
-                    See Projects
-                  </StyledButton> */}
+                See Projects
+              </StyledButton> */}
                 </ScrollLink>
                 {/* <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
-                    Watch Video
-                  </StyledButton>
-                </ScrollLink> */}
+              <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
+                Watch Video
+              </StyledButton>
+            </ScrollLink> */}
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4} sx={{ position: 'relative' }}>
-            <Box sx={{ lineHeight: 0 }}>
-              {<Image src="/images/avatars/merounded.png" width={250} height={320} alt="Hero img" />}
-            </Box>
-          </Grid>
+
+          <Box sx={{ lineHeight: 0, m: 'auto' }}>
+            {<Image src="/images/avatars/merounded.png" width={250} height={300} alt="me" />}
+          </Box>
         </Grid>
         {/* Experience */}
         <Box sx={{ boxShadow: 2, py: 2, px: 3, borderRadius: 4 }}>
