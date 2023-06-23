@@ -1,12 +1,10 @@
 import React, { FC } from 'react'
-import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { Link as ScrollLink } from 'react-scroll'
-import { StyledButton } from '@/components/styled-button'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+
 import Carousel from 'react-material-ui-carousel'
 
 interface Exp {
@@ -191,6 +189,7 @@ const HomeHero: FC = () => {
                   }
                 }
               `}</style>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/icons/reactLogoGirar.png/" alt="Rotating Image" style={styles.rotatingImage} />
             </div>
           </Box>
@@ -200,12 +199,12 @@ const HomeHero: FC = () => {
         <Grid container>
           <Carousel
             sx={{ width: '100%' }}
-            navButtonsWrapperProps={false}
-            navButtonsProps={false}
+            // navButtonsWrapperProps="false"
+            // navButtonsProps={false}
             autoPlay={true}
             animation="slide"
-            duration="2500"
-            interval="5000"
+            duration={2500}
+            interval={5000}
             indicators={false}
             navButtonsAlwaysInvisible={true}
             // navButtonsAlwaysVisible={true}
