@@ -208,8 +208,6 @@ const HomeHero: FC = () => {
             indicators={false}
             navButtonsAlwaysInvisible={true}
             // navButtonsAlwaysVisible={true}
-            next={() => {}}
-            prev={() => {}}
           >
             {elements.map((item) => (
               <Grid key={item.value}>
