@@ -6,10 +6,10 @@ interface Props {
   variant?: 'primary' | 'secondary'
 }
 
-const Logo: FC<Props> = ({ onClick, variant }) => {
+const Logo: FC<Props> = ({ variant }) => {
   return (
     <Stack direction={'row'}>
-      <Avatar src={'/images/icons/yo.png'} sx={{ width: 50, height: 50, mr: 1 }}></Avatar>
+      <Avatar src={'/images/icons/yo.PNG'} sx={{ width: 50, height: 50, mr: 1 }}></Avatar>
       <Typography
         variant="h4"
         component="h1"

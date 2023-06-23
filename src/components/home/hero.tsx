@@ -204,10 +204,12 @@ const HomeHero: FC = () => {
             autoPlay={true}
             animation="slide"
             duration={2500}
-            interval={5000}
+            interval={6000}
             indicators={false}
             navButtonsAlwaysInvisible={true}
             // navButtonsAlwaysVisible={true}
+            // next={() => {}}
+            // prev={() => {}}
           >
             {elements.map((item) => (
               <Grid key={item.value}>
