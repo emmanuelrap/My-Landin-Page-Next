@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Typography } from '@mui/material'
+import { Avatar, Box, Stack, Typography } from '@mui/material'
 
 interface Props {
   onClick?: () => void
@@ -8,15 +8,16 @@ interface Props {
 
 const Logo: FC<Props> = ({ onClick, variant }) => {
   return (
-    <Box onClick={onClick}>
+    <Stack direction={'row'}>
+      <Avatar src={'/images/icons/yo.png'} sx={{ width: 50, height: 50, mr: 1 }}></Avatar>
       <Typography
         variant="h4"
         component="h1"
-        sx={{ fontWeight: 600, '& span': { color: variant === 'primary' ? 'primary.main' : 'unset' } }}
+        sx={{ mt: 1.5, fontWeight: 600, '& span': { color: variant === 'primary' ? 'primary.main' : 'unset' } }}
       >
         <span>Zambrano</span>.Ing
       </Typography>
-    </Box>
+    </Stack>
   )
 }
 

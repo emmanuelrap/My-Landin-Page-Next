@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import { Link as ScrollLink } from 'react-scroll'
 import { StyledButton } from '@/components/styled-button'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import Carousel from 'react-material-ui-carousel'
 
 interface Exp {
   label: string
@@ -16,14 +17,26 @@ interface ExpItemProps {
   item: Exp
 }
 
-const exps: Array<Exp> = [
+const elements: Array<Exp> = [
   {
-    label: 'Java, JS,TypeScript, Kotlin, Python',
+    label: 'Java, JS, JSX, TypeScript, Kotlin ',
     value: 'Programmer',
   },
   {
-    label: 'ReactJS, HTML5,Tailwind, SASS, Bootstrap, MUI, PWA-SPA,Node,Web Services',
-    value: 'Web Developer',
+    label: 'HTML5, ReactJS, Vue, NEXT ,Tailwind, SASS, Bootstrap, MUI, PWA-SPA, Redux',
+    value: 'Frontend',
+  },
+  {
+    label: 'Node, SQL, NoSQL, MongoDB',
+    value: 'Backend',
+  },
+  {
+    label: 'Web services, Postman, OpenIA API,Firebase, Auth0, Netlify, Fly.io, Vercel, Gitpages, ',
+    value: 'Services',
+  },
+  {
+    label: 'AWS, PostgreSQL, English ',
+    value: 'Currently learning ',
   },
   {
     label: 'Creativity, Critical Thinking, Logic, love to learn',
@@ -33,14 +46,15 @@ const exps: Array<Exp> = [
 
 const ExpItem: FC<ExpItemProps> = ({ item }) => {
   const { value, label } = item
+
   return (
     <Box sx={{ textAlign: 'center', mb: { xs: 1, md: 0 } }}>
       <Typography
-        sx={{ color: 'secondary.main', mb: { xs: 1, md: 2 }, fontSize: { xs: 34, md: 44 }, fontWeight: 'bold' }}
+        sx={{ color: 'secondary.main', mb: { xs: 1, md: 2 }, fontSize: { xs: 30, md: 40 }, fontWeight: 'bold' }}
       >
         {value}
       </Typography>
-      <Typography color="text.secondary" variant="h5">
+      <Typography color="text.secondary" variant="h4">
         {label}
       </Typography>
     </Box>
@@ -48,6 +62,28 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 }
 
 const HomeHero: FC = () => {
+  const styles = {
+    rotationContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '200px',
+      height: '200px',
+    },
+    rotatingImage: {
+      animation: 'rotate 10s linear infinite',
+      width: '250px', // Cambia el tamaño de la imagen
+      height: '250px', // Cambia el tamaño de la imagen
+    },
+    '@keyframes rotate': {
+      '0%': {
+        transform: 'rotate(0deg)',
+      },
+      '100%': {
+        transform: 'rotate(360deg)',
+      },
+    },
+  }
   return (
     <Box
       id="hero"
@@ -120,12 +156,12 @@ const HomeHero: FC = () => {
               </Box>
               <Box sx={{ mb: 4, width: { xs: '100%', md: '100%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.5, fontSize: '1.3rem' }}>
-                  My name is Carlos Emmanuel Zambrano Cortez, I am System Enginner and Web developer, I love the
-                  technology and solving problems.
+                  My name is Carlos Zambrano, I am System Enginner and Web developer, I love the technology and solving
+                  problems.
                 </Typography>
               </Box>
               <Box sx={{ '& button': { mr: 2 } }}>
-                <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}>
+                <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={400}>
                   {/* <StyledButton color="primary" size="large" variant="contained">
                 See Projects
               </StyledButton> */}
@@ -139,20 +175,50 @@ const HomeHero: FC = () => {
             </Box>
           </Grid>
 
+          {/* PONER ANIMACION AQUI */}
+          {/* <Box sx={{ lineHeight: 0, m: 'auto' }}>
+            {<Image src="/images/avatars/merounded.png" width={180} height={220} alt="me" />}
+          </Box> */}
           <Box sx={{ lineHeight: 0, m: 'auto' }}>
-            {<Image src="/images/avatars/merounded.png" width={250} height={300} alt="me" />}
+            <div style={styles.rotationContainer}>
+              <style jsx>{`
+                @keyframes rotate {
+                  0% {
+                    transform: rotate(0deg);
+                  }
+                  100% {
+                    transform: rotate(360deg);
+                  }
+                }
+              `}</style>
+              <img src="/images/icons/reactLogoGirar.png/" alt="Rotating Image" style={styles.rotatingImage} />
+            </div>
           </Box>
         </Grid>
-        {/* Experience */}
-        <Box sx={{ boxShadow: 2, py: 2, px: 3, borderRadius: 4 }}>
-          <Grid container spacing={2}>
-            {exps.map((item) => (
-              <Grid key={item.value} item xs={12} md={4}>
+        {/* Carrucel */}
+
+        <Grid container>
+          <Carousel
+            sx={{ width: '100%' }}
+            navButtonsWrapperProps={false}
+            navButtonsProps={false}
+            autoPlay={true}
+            animation="slide"
+            duration="2500"
+            interval="5000"
+            indicators={false}
+            navButtonsAlwaysInvisible={true}
+            // navButtonsAlwaysVisible={true}
+            next={() => {}}
+            prev={() => {}}
+          >
+            {elements.map((item) => (
+              <Grid key={item.value}>
                 <ExpItem item={item} />
               </Grid>
             ))}
-          </Grid>
-        </Box>
+          </Carousel>
+        </Grid>
       </Container>
     </Box>
   )

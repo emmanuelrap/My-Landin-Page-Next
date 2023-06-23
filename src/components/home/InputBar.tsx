@@ -140,7 +140,7 @@ const InputBar: React.FC = () => {
         justifyContent="center"
         width="50%" // Ajusta el valor de width según tus necesidades
         mx="auto"
-        sx={{ mt: 2 }}
+        sx={{ mt: 5 }}
       >
         <Box>
           {open ? (
