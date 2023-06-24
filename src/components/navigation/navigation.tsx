@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import { Link as ScrollLink } from 'react-scroll'
 import { navigations } from './navigation.data'
 
-const Navigation: FC = ({ visibleMenu, setVisibleMenu }) => {
+const Navigation: FC = () => {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleClick = () => {
     console.log('diste click')
