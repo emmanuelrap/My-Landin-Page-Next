@@ -3,29 +3,37 @@ import Box from '@mui/material/Box'
 import { Link as ScrollLink } from 'react-scroll'
 import { navigations } from './navigation.data'
 
-const Navigation: FC = () => {
+const Navigation: FC = ({ visibleMenu, setVisibleMenu }) => {
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const handleClick = () => {
+    console.log('diste click')
+  }
+
   return (
+    // AppBar
     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       {navigations.map(({ path: destination, label }) => (
         <Box
+          onClick={handleClick}
           component={ScrollLink}
           key={destination}
           activeClass="current"
           to={destination}
           spy={true}
           smooth={true}
-          duration={350}
+          duration={2000}
           sx={{
+            mt: 1.2,
             position: 'relative',
             color: 'text.disabled',
             cursor: 'pointer',
-            fontWeight: 600,
+            fontWeight: 500,
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
             px: { xs: 0, md: 3 },
             mb: { xs: 3, md: 0 },
-            fontSize: { xs: '1.2rem', md: 'inherit' },
+            fontSize: { xs: '1.1rem', md: 'inherit' },
             ...(destination === '/' && {
               color: 'primary.main',
             }),
@@ -36,6 +44,7 @@ const Navigation: FC = () => {
 
             '&:hover': {
               color: 'primary.main',
+
               '&>div': {
                 display: 'block',
               },
@@ -45,13 +54,12 @@ const Navigation: FC = () => {
           <Box
             sx={{
               position: 'absolute',
-              top: 12,
-              transform: 'rotate(3deg)',
-              '& img': { width: 44, height: 'auto' },
+              top: 15,
+              '& img': { width: 90, height: 20 },
             }}
           >
             {/* eslint-disable-next-line */}
-            <img src="/images/headline-curve.svg" alt="Headline curve" />
+            <img src="/images/line.png" alt="Headline curve" />
           </Box>
           {label}
         </Box>

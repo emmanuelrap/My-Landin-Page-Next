@@ -78,7 +78,7 @@ const HomeOurMentors: FC = () => {
 
   return (
     <Box
-      id="mentors"
+      id="section2"
       sx={{
         pt: {
           xs: 6,

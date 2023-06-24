@@ -115,10 +115,11 @@ const InputBar: React.FC = () => {
   }
 
   const tooltipStyle = {
-    width: '300px',
+    width: '290',
     fontSize: '18px',
     position: 'relative',
-    p: 1,
+    p: 0.5,
+    pl: 1,
   }
 
   const handleCloseTooltip = () => {
@@ -135,12 +136,20 @@ const InputBar: React.FC = () => {
   return (
     <Stack>
       <Box
+        id="section1"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        width="50%" // Ajusta el valor de width según tus necesidades
-        mx="auto"
-        sx={{ mt: 5 }}
+        //width="50%" // Ajusta el valor de width según tus necesidades
+
+        sx={{
+          m: 'auto',
+          mt: 5,
+          width: '80%', // Ancho del 100% en dispositivos móviles
+          '@media (min-width: 768px)': {
+            width: '50%', // Ancho del 50% en dispositivos de escritorio (a partir de 768px de ancho)
+          },
+        }}
       >
         <Box>
           {open ? (
@@ -148,7 +157,7 @@ const InputBar: React.FC = () => {
               title={
                 <>
                   <Box sx={tooltipStyle}>
-                    {" Hello! My name is Nia, I'm Carlos Zambrano's Assistant. I will help you with your questions"}.
+                    {" Hello, NIA here! I'm Carlos Zambrano's Assistant. I will help you with your questions"}.
                   </Box>
                   <IconButton
                     onClick={handleCloseTooltip}
@@ -164,27 +173,25 @@ const InputBar: React.FC = () => {
                   </IconButton>
                 </>
               }
-              sx={{ width: 500 }}
               arrow
               placement="top"
               open={open}
             >
               <Avatar
                 src="https://img.freepik.com/fotos-premium/traje-casual-chica-anime-kawaii-ia-generativa_755833-80.jpg?w=2000"
-                alt="Avatar del famoso"
-                sx={{ mr: 2, mb: 3, width: 70, height: 70 }}
+                alt="My IA"
+                sx={{ mr: 2, mb: 0, width: 60, height: 60 }}
               />
             </Tooltip>
           ) : (
             <Avatar
               src="https://img.freepik.com/fotos-premium/traje-casual-chica-anime-kawaii-ia-generativa_755833-80.jpg?w=2000"
-              alt="Avatar del famoso"
-              sx={{ mr: 2, mb: 3, width: 64, height: 64 }}
+              alt="My IA"
               onClick={handleOpenTooltip}
             />
           )}
         </Box>
-        <Box display="flex" alignItems="center" flexGrow={1} sx={{ mb: 3 }}>
+        <Box display="flex" alignItems="center" flexGrow={1} sx={{ mb: 3, m: 'auto' }}>
           <TextField
             value={inputValue}
             onKeyDown={handleKeyPress}
@@ -214,7 +221,6 @@ const InputBar: React.FC = () => {
                 </IconButton>
               ),
             }}
-            sx={{ m: 0 }}
           />
         </Box>
       </Box>

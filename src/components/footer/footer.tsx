@@ -14,6 +14,7 @@ const Footer: FC = () => {
   }
   return (
     <Box
+      id="section4"
       sx={{
         position: 'relative',
         backgroundColor: '#f8f8f8',

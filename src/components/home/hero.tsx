@@ -18,27 +18,27 @@ interface ExpItemProps {
 const elements: Array<Exp> = [
   {
     label: 'Java, JS, JSX, TypeScript, Kotlin ',
-    value: 'Programmer',
+    value: 'PROGRAMMER',
   },
   {
     label: 'HTML5, ReactJS, Vue, NEXT ,Tailwind, SASS, Bootstrap, MUI, PWA-SPA, Redux',
-    value: 'Frontend',
+    value: 'FRONTEND',
   },
   {
     label: 'Node, SQL, NoSQL, MongoDB',
-    value: 'Backend',
+    value: 'BACKEND',
   },
   {
-    label: 'Web services, Postman, OpenIA API,Firebase, Auth0, Netlify, Fly.io, Vercel, Gitpages, ',
-    value: 'Services',
+    label: 'Web services, Postman, OpenIA API, Firebase, Auth0, Netlify, Fly.io, Vercel, Gitpages, ',
+    value: 'SERVICES',
   },
   {
     label: 'AWS, PostgreSQL, English ',
-    value: 'Currently learning ',
+    value: 'CURRENTLY LEARNING ',
   },
   {
     label: 'Creativity, Critical Thinking, Logic, love to learn',
-    value: 'Enginner',
+    value: 'ENGINNER',
   },
 ]
 
@@ -46,9 +46,9 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
   const { value, label } = item
 
   return (
-    <Box sx={{ textAlign: 'center', mb: { xs: 1, md: 0 } }}>
+    <Box sx={{ textAlign: 'center', mb: { xs: 1, md: 0 } }} id="section0">
       <Typography
-        sx={{ color: 'secondary.main', mb: { xs: 1, md: 2 }, fontSize: { xs: 30, md: 40 }, fontWeight: 'bold' }}
+        sx={{ color: 'secondary.main', mb: { xs: 1, md: 2 }, fontSize: { xs: 45, md: 55 }, fontWeight: 'bold' }}
       >
         {value}
       </Typography>
@@ -69,9 +69,9 @@ const HomeHero: FC = () => {
       height: '200px',
     },
     rotatingImage: {
-      animation: 'rotate 10s linear infinite',
-      width: '250px', // Cambia el tamaño de la imagen
-      height: '250px', // Cambia el tamaño de la imagen
+      animation: 'rotate 12s linear infinite',
+      width: '220px', // Cambia el tamaño de la imagen
+      height: '220px', // Cambia el tamaño de la imagen
     },
     '@keyframes rotate': {
       '0%': {
@@ -201,10 +201,11 @@ const HomeHero: FC = () => {
             sx={{ width: '100%' }}
             // navButtonsWrapperProps="false"
             // navButtonsProps={false}
+            stopAutoPlayOnHover={false}
             autoPlay={true}
             animation="slide"
-            duration={2500}
-            interval={6000}
+            duration={2000}
+            interval={5000}
             indicators={false}
             navButtonsAlwaysInvisible={true}
             // navButtonsAlwaysVisible={true}
