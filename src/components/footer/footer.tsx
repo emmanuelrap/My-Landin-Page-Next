@@ -54,12 +54,17 @@ const Footer: FC = () => {
               <FooterSocialLinks></FooterSocialLinks>
             </motion.div>
             <Box textAlign="center">
-              <Typography component="h1" variant="h1" sx={{ color: '#000', mb: 2 }}>
+              <Typography component="h1" variant="h1" sx={{ color: '#FFF', mb: 2 }}>
                 Thanks for Watching!!
               </Typography>
-              <Typography variant="subtitle1" sx={{ color: '#000', letterSpacing: 1, mb: 2 }}>
+              <Typography variant="h5" sx={{ color: '#FFF', letterSpacing: 1, mb: 2 }}>
                 I hope you have enjoyed your stay. If you have any questions or comments, feel free to reach out to me
-                via email: <b>emmanuelzzz123@gmail.com</b>
+                via email:{' '}
+                <strong>
+                  <b>
+                    <a href="emmanuelzzz123@gmail.com">emmanuelzzz123@gmail.com</a>
+                  </b>
+                </strong>
               </Typography>
             </Box>
           </Grid>

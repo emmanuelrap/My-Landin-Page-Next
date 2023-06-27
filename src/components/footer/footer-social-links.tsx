@@ -51,8 +51,8 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 36,
-        height: 36,
+        width: 40,
+        height: 40,
         borderRadius: '50%',
         color: 'inherit',
         '&:hover': {
@@ -60,7 +60,7 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         },
         '& img': {
           fill: 'currentColor',
-          width: 22,
+          width: 25,
           height: 'auto',
         },
       }}

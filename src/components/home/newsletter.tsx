@@ -1,11 +1,29 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import Box from '@mui/material/Box'
 import InputBase from '@mui/material/InputBase'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { StyledButton } from '../styled-button'
+import { Snackbar } from '@mui/material'
+import SendIcon from '@mui/icons-material/Send'
 
 const HomeNewsLetter: FC = () => {
+  const [texto, setTexto] = React.useState('')
+  const [open, setOpen] = useState(false)
+
+  const handleSnackbarClose = () => {
+    setOpen(false)
+  }
+
+  const handleActionClick = () => {
+    setTexto('')
+    setOpen(true)
+
+    // Cierra el Snackbar después de 3 segundos
+    setTimeout(() => {
+      setOpen(false)
+    }, 3000)
+  }
   return (
     <Box sx={{ backgroundColor: 'background.paper', py: { xs: 8, md: 10 } }}>
       <Container>
@@ -19,9 +37,11 @@ const HomeNewsLetter: FC = () => {
           }}
         >
           <Typography variant="h1" component="h2" sx={{ mb: 1, fontSize: { xs: 32, md: 42 } }}>
-            Subscribe to Our News Letter
+            Do you prefer me to send you an email?
           </Typography>
-          <Typography sx={{ mb: 6 }}>Subscribe to our newsletter to get information about our courses.</Typography>
+          <Typography sx={{ mb: 6 }}>
+            <strong>Write your email here, and I will get in touch with you.</strong>
+          </Typography>
 
           <Box
             sx={{
@@ -34,6 +54,8 @@ const HomeNewsLetter: FC = () => {
             }}
           >
             <InputBase
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTexto(event.target.value)}
+              value={texto}
               sx={{
                 backgroundColor: 'background.paper',
                 borderRadius: 3,
@@ -46,10 +68,17 @@ const HomeNewsLetter: FC = () => {
               placeholder="Enter your Email Address"
             />
             <Box>
-              <StyledButton disableHoverEffect size="large">
-                Subscribe
+              <StyledButton disableHoverEffect size="large" onClick={handleActionClick}>
+                Send <SendIcon sx={{ mb: -0.5, ml: 1 }} />
               </StyledButton>
             </Box>
+            <Snackbar
+              sx={{ width: 400 }}
+              open={open}
+              onClose={handleSnackbarClose}
+              message="E-mail Saved!"
+              autoHideDuration={4000}
+            />
           </Box>
         </Box>
       </Container>
