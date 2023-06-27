@@ -11,11 +11,11 @@ const HomeNewsLetter: FC = () => {
   const [texto, setTexto] = React.useState('')
   const [open, setOpen] = useState(false)
 
-  const handleSnackbarClose = () => {
+  const handleSnackbarClose = (): void => {
     setOpen(false)
   }
 
-  const handleActionClick = () => {
+  const handleActionClick = (): void => {
     setTexto('')
     setOpen(true)
 
