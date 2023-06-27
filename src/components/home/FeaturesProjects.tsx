@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Avatar, Box, Grid, Typography } from '@mui/material'
-import React from 'react'
+import React, { FC } from 'react'
 import Carousel from 'react-material-ui-carousel'
 import GradeIcon from '@mui/icons-material/Grade'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -49,7 +49,7 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
     </Box>
   )
 }
-const FeaturesProjects: React.FC = () => {
+const FeaturesProjects: FC = () => {
   return (
     <Box
       sx={{
