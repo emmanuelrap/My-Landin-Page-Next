@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Avatar, Box, Stack, Typography } from '@mui/material'
+import { Avatar, Box, IconButton, Stack, Tooltip, Typography } from '@mui/material'
 
 interface Props {
   onClick?: () => void
@@ -7,16 +7,27 @@ interface Props {
 }
 
 const Logo: FC<Props> = ({ variant }) => {
+  const linkedinUrl = 'https://www.linkedin.com/in/carlos-zambra/'
+
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const handleLinkedInClick = () => {
+    window.open(linkedinUrl, '_blank')
+  }
+
   return (
     <Stack direction={'row'}>
-      <Avatar src={'/images/icons/yo.PNG'} sx={{ width: 40, height: 40, mr: 1 }}></Avatar>
-      <Typography
-        variant="h4"
-        component="h1"
-        sx={{ mt: 1.5, fontWeight: 600, '& span': { color: variant === 'primary' ? 'primary.main' : 'unset' } }}
-      >
-        <span>Zam</span>Dev
-      </Typography>
+      <Tooltip title="Ver Perfil en Linkedin" arrow sx={{ fontSize: '2rem' }}>
+        <IconButton onClick={handleLinkedInClick} size="small">
+          <Avatar src={'/images/icons/yo.PNG'} sx={{ width: 35, height: 35, mr: 1, mt: 1 }}></Avatar>
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{ mt: 1.5, fontWeight: 600, '& span': { color: variant === 'primary' ? 'secondary.main' : 'unset' } }}
+          >
+            <span>Zam</span>Dev
+          </Typography>{' '}
+        </IconButton>
+      </Tooltip>
     </Stack>
   )
 }

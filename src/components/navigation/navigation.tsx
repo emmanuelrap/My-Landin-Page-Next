@@ -35,7 +35,7 @@ const Navigation: FC = () => {
             mb: { xs: 3, md: 0 },
             fontSize: { xs: '1.1rem', md: 'inherit' },
             ...(destination === '/' && {
-              color: 'primary.main',
+              color: 'secondary.main',
             }),
 
             '& > div': { display: 'none' },
@@ -43,7 +43,7 @@ const Navigation: FC = () => {
             '&.current>div': { display: 'block' },
 
             '&:hover': {
-              color: 'primary.main',
+              color: 'secondary.main',
 
               '&>div': {
                 display: 'block',

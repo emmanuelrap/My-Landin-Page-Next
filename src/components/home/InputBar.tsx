@@ -144,7 +144,7 @@ const InputBar: React.FC = () => {
 
         sx={{
           m: 'auto',
-          mt: 5,
+          mt: 2,
           width: '80%', // Ancho del 100% en dispositivos móviles
           '@media (min-width: 768px)': {
             width: '50%', // Ancho del 50% en dispositivos de escritorio (a partir de 768px de ancho)
@@ -187,11 +187,12 @@ const InputBar: React.FC = () => {
             <Avatar
               src="https://img.freepik.com/fotos-premium/traje-casual-chica-anime-kawaii-ia-generativa_755833-80.jpg?w=2000"
               alt="My IA"
+              sx={{ mr: 2, mb: 0, width: 60, height: 60 }}
               onClick={handleOpenTooltip}
             />
           )}
         </Box>
-        <Box display="flex" alignItems="center" flexGrow={1} sx={{ mb: 3, m: 'auto' }}>
+        <Box display="flex" alignItems="center" flexGrow={1} sx={{ mb: 0, m: 'auto' }}>
           <TextField
             value={inputValue}
             onKeyDown={handleKeyPress}
@@ -236,7 +237,7 @@ const InputBar: React.FC = () => {
             borderRadius: 4,
             padding: 4,
             marginTop: 2,
-            mb: 4,
+            mb: 0,
           }}
         >
           <Typography

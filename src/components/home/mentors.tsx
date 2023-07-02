@@ -81,8 +81,8 @@ const HomeOurMentors: FC = () => {
       id="section2"
       sx={{
         pt: {
-          xs: 6,
-          md: 8,
+          xs: 3,
+          md: 4,
         },
         pb: {
           xs: 8,

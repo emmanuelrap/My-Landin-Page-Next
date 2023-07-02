@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { NextPageWithLayout } from '@/interfaces/layout'
 import { MainLayout } from '@/components/layout'
 import FeaturesProjects from '@/components/home/FeaturesProjects'
+import { Box } from '@mui/material'
 // import { HomeFeature, HomeHero, HomePopularCourse, HomeTestimonial, HomeOurMentors, DynamicHomeNewsLetter } from '@/components/home'
 
 const DynamicHomeHero = dynamic(() => import('../components/home/hero'))
@@ -12,14 +13,14 @@ const DynamicHomeNewsLetter = dynamic(() => import('../components/home/newslette
 
 const Home: NextPageWithLayout = () => {
   return (
-    <>
+    <Box sx={{ backgroundColor: 'white' }}>
+      <br /> <br />
       <DynamicHomeHero />
       <InputIA />
       <FeaturesProjects />
       <DynamicHomeOurMentors />
-
       <DynamicHomeNewsLetter />
-    </>
+    </Box>
   )
 }
 

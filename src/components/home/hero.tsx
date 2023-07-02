@@ -86,7 +86,7 @@ const HomeHero: FC = () => {
     <Box
       id="hero"
       sx={{
-        backgroundColor: 'background.paper',
+        backgroundColor: '#ecf3f3',
         position: 'relative',
         pt: 1,
         pb: { xs: 8, md: 10 },

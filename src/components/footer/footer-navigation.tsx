@@ -59,7 +59,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ label, path }) => {
 
 const FooterNavigation: FC = () => {
   return (
-    <Box>
+    <Box id="footerId">
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <FooterSectionTitle title="Course" />
