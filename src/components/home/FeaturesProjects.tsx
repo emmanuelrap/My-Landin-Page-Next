@@ -148,8 +148,7 @@ const FeaturesProjects: FC = () => {
             sx={{ mt: 3, mx: { xl: 20, lg: 15, md: 10, sm: 5, xs: 0 } }}
             align="justify"
           >
-            {' '}
-            This web application is a fully functional PWA, it's my personal project and applies everything I've
+            This web application is a fully functional PWA, its my personal project and applies everything I have
             learned. It uses React and Vite, implemented with the assistance of UI-material components. It includes a
             functional REST API structure and has sections for product and user administration. It utilizes MongoDB and
             third-party services like Firebase and Oauth
